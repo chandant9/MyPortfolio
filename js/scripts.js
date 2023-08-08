@@ -1,9 +1,40 @@
+import { aboutMeContent, contactContent } from "./content.js";
+
 document.addEventListener("DOMContentLoaded", function () {
     const arrow = document.getElementById("arrow");
     const nameTypingText = document.getElementById("name-typing-text");
     const typingText = document.getElementById("typing-text");
     const descriptionTypingText = document.getElementById("desc-typing-text");
     const landingSection = document.getElementById("landing");
+
+    const sections = document.querySelectorAll(".section");
+    const navLinks = document.querySelectorAll("nav a");
+    const contentContainers = document.querySelectorAll(".content");
+
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = link.getAttribute("href");
+            const targetSection = document.querySelector(targetId);
+            const contentContainer = targetSection.querySelector(".content");
+
+            sections.forEach(function (section) {
+                section.classList.remove("active");
+            });
+
+            contentContainers.forEach(function (container) {
+                container.innerHTML = ""; // Clear previous content
+            });
+
+            if (targetId === "#about-me") {
+                contentContainer.innerHTML = aboutMeContent;
+            } else if (targetId === "#contact") {
+                contentContainer.innerHTML = contactContent;
+            }
+
+            targetSection.classList.add("active");
+        });
+    });
 
     let scrollCount = 0; // Counter for scroll events
     let scrolledToHeader = false; // Flag to track scrolling to header
