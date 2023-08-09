@@ -41,6 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let scrollCount = 0; // Counter for scroll events
     let scrolledToHeader = false; // Flag to track scrolling to header
 
+    // Set the hidden state to true in local storage while loading the page
+    localStorage.setItem("landingHidden", "false");
+    
     arrow.addEventListener("click", function () {
         // Hide the landing section by adding the hidden class
         landingSection.classList.add("hidden");

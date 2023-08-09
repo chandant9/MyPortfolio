@@ -38,11 +38,25 @@ section {
     margin: 20px 0;
 }
 
+/* Add a wrapper around the main content and footer */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Set the main content to expand and push the footer down
+.main-content {
+    flex: 1;
+} */
+
+/* Style the footer */
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    margin-top: auto;
 }
 
 /* initial page styling arrow effect */
@@ -115,3 +129,7 @@ footer {
     color: transparent; /* Start with transparent color */
     transition: color 1s ease; /* Add a transition effect for the color change */
 }
+
+
+
+
