@@ -1,4 +1,4 @@
-import { aboutMeContent, contactContent } from "./content.js";
+import { aboutMeContent, contactContent, projectsContent } from "./content.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const arrow = document.getElementById("arrow");
@@ -26,8 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 container.innerHTML = ""; // Clear previous content
             });
 
-            if (targetId === "#about-me") {
+            if (targetId === "#about") {
                 contentContainer.innerHTML = aboutMeContent;
+            } else if (targetId === "#projects") {
+                contentContainer.innerHTML = projectsContent;
             } else if (targetId === "#contact") {
                 contentContainer.innerHTML = contactContent;
             }

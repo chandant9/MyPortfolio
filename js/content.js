@@ -30,4 +30,17 @@ const contactContent = `
     <p>Contact form or contact information...</p>
 `;
 
-export { aboutMeContent, contactContent };
+const projectsContent = `
+   <h2>Projects</h2>
+   <div class="project">
+      <h3>Project 1</h3>
+      <p>Description of project 1.</p>
+   </div>
+   <div class="project">
+      <h3>Project 2</h3>
+      <p>Description of project 2.</p>
+   </div>
+   <!-- Add more projects as needed -->
+`;
+
+export { aboutMeContent, contactContent, projectsContent };
