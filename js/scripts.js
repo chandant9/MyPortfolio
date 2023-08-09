@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const descriptionTypingText = document.getElementById("desc-typing-text");
     const landingSection = document.getElementById("landing");
 
+    const landingBackground = document.querySelector(".landing-background");
+    const numberOfBalls = 50; // Adjust the number of balls as needed
+
     const sections = document.querySelectorAll(".section");
     const navLinks = document.querySelectorAll("nav a");
     const contentContainers = document.querySelectorAll(".content");
@@ -59,6 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
         landingSection.classList.remove("hidden"); // Show the landing section by default
         arrow.style.visibility = "hidden";
         typeHeaderAndParagraphs();
+        // Generate and add balls to the landing background using the createBalls function
+        createBalls(numberOfBalls, landingBackground);
     }
 
     function typeText(text, element, callback) {
@@ -123,4 +128,22 @@ document.addEventListener("DOMContentLoaded", function () {
     //         scrolledToHeader = true;
     //     }
     // });
+
+    
+    function createBalls(numberOfBalls, landingBackground) {
+        const colors = ['#ff5733', '#00a8ff', '#ffc107', '#0febf3', '#9b80f5', '#fe5cd0']; // List of colors
+    
+        for (let i = 0; i < numberOfBalls; i++) {
+            const ball = document.createElement("div");
+            ball.classList.add("ball");
+            ball.style.left = `${Math.random() * 100}vw`;
+            ball.style.animationDelay = `${Math.random() * 5}s`; // Add random animation delay
+    
+            // Set a random color from the colors array
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            ball.style.backgroundColor = randomColor;
+    
+            landingBackground.appendChild(ball);
+        }
+    }
 });

@@ -98,6 +98,58 @@ footer {
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
+/* landing background animation */
+
+.landing-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Set the height to cover the viewport */
+    background-color: transparent; /* Set to transparent */
+    pointer-events: none; /* Disable mouse interaction on the background */
+    z-index: -1; /* Place the background behind other elements */
+}
+
+/* Define the ball animation */
+.ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: ballAnimation 3s linear infinite alternate;
+    transform-origin: center bottom; /* Set the origin for bouncing */
+    opacity: 0.8; /* Adjust the opacity as needed */
+    pointer-events: none; /* Disable mouse interaction by default */
+    transition: opacity 0.3s; /* Add transition for opacity change */
+}
+
+/* Keyframes for the ball animation */
+@keyframes ballAnimation {
+    0% {
+        transform: translateX(0) translateY(-20px); /* Start from a higher position */
+    }
+    100% {
+        transform: translateX(0) translateY(calc(100vh - 20px)); /* Stay at the bottom of the screen */
+    }
+}
+
+/* Keyframes for the ball bouncing animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Add a class for hovering effect */
+.ball:hover {
+    opacity: 1; /* Make the ball more visible on hover */
+    animation: bounce 1s infinite; /* Add a bounce effect on hover */
+}
+
 /* creating robotic look for the typing text in the landing page */
 
 #name-typing-text {
