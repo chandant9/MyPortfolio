@@ -1,4 +1,4 @@
-import { aboutMeContent, contactContent, projectsContent } from "./content.js";
+import { homeContent, aboutMeContent, contactContent, projectsContent } from "./content.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const arrow = document.getElementById("arrow");
@@ -73,7 +73,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 container.innerHTML = ""; // Clear previous content
             });
 
-            if (targetId === "#about") {
+            if(targetId === "#home") {
+                contentContainer.innerHTML = homeContent;
+            } else if (targetId === "#about") {
                 contentContainer.innerHTML = aboutMeContent;
             } else if (targetId === "#projects") {
                 createProjectBoxes(projectsContent);;
@@ -98,6 +100,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Store the hidden state in local storage
         localStorage.setItem("landingHidden", "true");
+        
+        //load the home content by default when the page loads first
+        const targetSection = document.querySelector("#home");
+        const contentContainer = targetSection.querySelector(".content");
+        contentContainer.innerHTML = homeContent
+
+        targetSection.classList.add("active");
     });
 
     // Check if user has scrolled up or if it's stored in local storage
@@ -215,6 +224,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createProjectBoxes(projects) {
         const projectsContent = document.getElementById("projects-content");
+
+        const projectsContainer = document.createElement("div");
+        projectsContainer.classList.add("projects-container");
+
+        // Create the header for projects section
+        const projectsHeader = document.createElement("h2");
+        projectsHeader.textContent = "Projects";
+        projectsContainer.appendChild(projectsHeader);
+
+        projectsContent.appendChild(projectsContainer);
     
         projects.forEach(project => {
             const projectBox = document.createElement("div");
@@ -238,6 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Append the project box to the projectsContent
             projectsContent.appendChild(projectBox);
         });
+        
     }
     
 

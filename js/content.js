@@ -1,3 +1,9 @@
+const homeContent = `
+    <h2>Home</h2>
+    <p>Home content</p>
+`;
+
+
 const aboutMeContent = `
 <h2>About Me</h2>
 <p>Hello! We meet again! :) Now that you know my name already, I want to start by saying thank you so much
@@ -45,4 +51,4 @@ const projectsContent = [
     // ... other project objects
 ];
 
-export { aboutMeContent, contactContent, projectsContent };
+export { homeContent, aboutMeContent, contactContent, projectsContent };
