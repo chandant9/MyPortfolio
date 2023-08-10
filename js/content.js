@@ -30,17 +30,19 @@ const contactContent = `
     <p>Contact form or contact information...</p>
 `;
 
-const projectsContent = `
-   <h2>Projects</h2>
-   <div class="project">
-      <h3>Project 1</h3>
-      <p>Description of project 1.</p>
-   </div>
-   <div class="project">
-      <h3>Project 2</h3>
-      <p>Description of project 2.</p>
-   </div>
-   <!-- Add more projects as needed -->
-`;
+
+const projectsContent = [
+    {
+        title: "Grocery List Application",
+        description: "This is a project that aims to simplify the grocery purchasing by helping users understand their weekly/monthly buying habits and when to replenish or plan the next grocery day. It tracks each items purchased and its expiration date and quantities and so on. More features to be added. Not everything has been disclosed yet due to the project bein on its initial stage. This project is currently being developed using python with django framework.",
+        link: "https://github.com/chandant9/idogrocery"
+    },
+    {
+        title: "Project 2",
+        description: "Description of Project 2.",
+        link: "https://www.example.com/project2"
+    },
+    // ... other project objects
+];
 
 export { aboutMeContent, contactContent, projectsContent };

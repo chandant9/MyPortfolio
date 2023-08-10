@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (targetId === "#about") {
                 contentContainer.innerHTML = aboutMeContent;
             } else if (targetId === "#projects") {
-                contentContainer.innerHTML = projectsContent;
+                createProjectBoxes(projectsContent);;
             } else if (targetId === "#contact") {
                 contentContainer.innerHTML = contactContent;
             }
@@ -212,4 +212,35 @@ document.addEventListener("DOMContentLoaded", function () {
             landingBackground.appendChild(ball);
         }
     }
+
+    function createProjectBoxes(projects) {
+        const projectsContent = document.getElementById("projects-content");
+    
+        projects.forEach(project => {
+            const projectBox = document.createElement("div");
+            projectBox.classList.add("project-box");
+    
+            // Add a click event listener to the project box
+            projectBox.addEventListener("click", function () {
+                window.open(project.link, '_blank');
+            });
+    
+            // Create and add content to the project box
+            const projectTitle = document.createElement("h3");
+            projectTitle.textContent = project.title;
+            const projectDescription = document.createElement("p");
+            projectDescription.textContent = project.description;
+    
+            // Append content to the project box
+            projectBox.appendChild(projectTitle);
+            projectBox.appendChild(projectDescription);
+    
+            // Append the project box to the projectsContent
+            projectsContent.appendChild(projectBox);
+        });
+    }
+    
+
+
+
 });

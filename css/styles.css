@@ -99,18 +99,34 @@ section {
 
 /* Apply spacing between header and paragraphs */
 .content h2 {
-    margin-bottom: 10px; /* Add margin below the header */
+    margin-bottom: 20px; /* Add margin below the header */
 }
 
 .content p {
     margin-bottom: 20px; /* Add margin below each paragraph */
     text-align: justify;
+    font-family: 'Lato';
+}
+
+.project-box {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-decoration: none; /* Remove underlines from anchor tag appearance */
+    color: #333; /* Set color for text */
+    display: block; /* Adjust display for anchor to act like a block */
+}
+
+.project-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 
-.project {
-    margin: 20px 0;
-}
 
 /* Add a wrapper around the main content and footer */
 .wrapper {
