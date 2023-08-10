@@ -8,31 +8,101 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Style the header */
 header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    position: relative;
 }
 
-nav ul {
+/* Style the header content */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Style the menu icon */
+#menu-icon {
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+    font-size: 28px;
+}
+
+
+#menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    width: auto;
+    text-align: left;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+}
+
+#menu.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+#menu ul {
     list-style: none;
+    padding: 0;
 }
 
-nav li {
-    display: inline;
-    margin: 0 15px;
+#menu li {
+    margin: 10px 0;
+    text-align: center;
 }
 
-nav a {
+#menu a {
     text-decoration: none;
     color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    padding: 10px 20px; /* Add padding to improve clickability and appearance */
+    transition: background-color 0.3s; /* Add transition for a smooth hover effect */
 }
+
+#menu a:hover {
+    background-color: #555; /* Change background color on hover */
+}
+
 
 section {
     padding: 40px 0;
     text-align: center;
 }
+
+.content {
+    padding: 0 20px; /* Add left and right padding of 20px */
+}
+
+/* Apply spacing between header and paragraphs */
+.content h2 {
+    margin-bottom: 10px; /* Add margin below the header */
+}
+
+.content p {
+    margin-bottom: 20px; /* Add margin below each paragraph */
+    text-align: justify;
+}
+
 
 .project {
     margin: 20px 0;
@@ -122,6 +192,8 @@ footer {
     opacity: 0.8; /* Adjust the opacity as needed */
     pointer-events: none; /* Disable mouse interaction by default */
     transition: opacity 0.3s; /* Add transition for opacity change */
+    background: radial-gradient(circle, #ffffff 10%, transparent 50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Keyframes for the ball animation */
@@ -148,7 +220,9 @@ footer {
 .ball:hover {
     opacity: 1; /* Make the ball more visible on hover */
     animation: bounce 1s infinite; /* Add a bounce effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 16px 32px rgba(0, 0, 0, 0.2);
 }
+
 
 /* creating robotic look for the typing text in the landing page */
 

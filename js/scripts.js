@@ -14,6 +14,48 @@ document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll("nav a");
     const contentContainers = document.querySelectorAll(".content");
 
+    const menuIcon = document.getElementById("menu-icon");
+    const menu = document.getElementById("menu");
+
+
+    menuIcon.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+
+    menuIcon.addEventListener("mouseover", function () {
+        menu.classList.add("active");
+    });
+
+    menuIcon.addEventListener("mouseout", function () {
+        menu.classList.remove("active");
+    });
+
+    // Keep the menu open when hovering over the menu or its items
+    menu.addEventListener("mouseenter", function () {
+        menu.classList.add("active");
+    });
+
+    menu.addEventListener("mouseleave", function (event) {
+        const relatedTarget = event.relatedTarget;
+        if (relatedTarget && !menu.contains(relatedTarget)) {
+            menu.classList.remove("active");
+        }
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+            menu.classList.remove("active");
+        }
+    });
+
+    // Add a click event listener to menu items
+    const menuItems = menu.querySelectorAll("a");
+    menuItems.forEach(function (menuItem) {
+        menuItem.addEventListener("click", function () {
+            menu.classList.remove("active");
+        });
+    });
+
     navLinks.forEach(function (link) {
         link.addEventListener("click", function (event) {
             event.preventDefault();
