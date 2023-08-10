@@ -14,7 +14,11 @@ header {
     color: #fff;
     padding: 10px 0;
     text-align: center;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform 0.3s ease;
 }
 
 /* Style the header content */
@@ -85,7 +89,7 @@ header {
 
 
 section {
-    padding: 40px 0;
+    padding-top: 80px;
     text-align: center;
 }
 
@@ -187,7 +191,7 @@ footer {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    animation: ballAnimation 3s linear infinite alternate;
+    animation: ballAnimation 3s linear infinite;
     transform-origin: center bottom; /* Set the origin for bouncing */
     opacity: 0.8; /* Adjust the opacity as needed */
     pointer-events: none; /* Disable mouse interaction by default */

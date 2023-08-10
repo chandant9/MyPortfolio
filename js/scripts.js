@@ -7,8 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const descriptionTypingText = document.getElementById("desc-typing-text");
     const landingSection = document.getElementById("landing");
 
+    const header = document.querySelector('header');
+
     const landingBackground = document.querySelector(".landing-background");
-    const numberOfBalls = 50; // Adjust the number of balls as needed
+    const numberOfBalls = 30; // Adjust the number of balls as needed
 
     const sections = document.querySelectorAll(".section");
     const navLinks = document.querySelectorAll("nav a");
@@ -83,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+
     let scrollCount = 0; // Counter for scroll events
     let scrolledToHeader = false; // Flag to track scrolling to header
 
@@ -150,6 +153,27 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+
+    let prevScrollPos = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+        const currentScrollPos = window.scrollY;
+
+        if (currentScrollPos > prevScrollPos) {
+            // Scrolling down
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            // Scrolling up
+            header.style.transform = 'translateY(0)';
+        }
+
+        prevScrollPos = currentScrollPos;
+
+        if (currentScrollPos === 0) {
+            // At the top of the page
+            header.style.transform = 'translateY(0)';
+        }
+    });
     
 
     // Listen for scroll events to show the landing section when scrolling up
