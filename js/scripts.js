@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = document.getElementById("menu-icon");
     const menu = document.getElementById("menu");
 
+    // const homeSection = document.getElementById("home");
+
 
     menuIcon.addEventListener("click", function () {
         menu.classList.toggle("active");
@@ -72,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
             contentContainers.forEach(function (container) {
                 container.innerHTML = ""; // Clear previous content
             });
+            
 
             if(targetId === "#home") {
                 contentContainer.innerHTML = homeContent;
@@ -259,8 +262,33 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         
     }
+
+    function createBinaryBackground() {
+        const binaryBackground = document.createElement("div");
+        binaryBackground.classList.add("binary-background");
     
+        const binaryDigits = ["0", "1"];
+        const numBinaryDigits = 500;
+    
+        for (let i = 0; i < numBinaryDigits; i++) {
+            const binaryDigit = document.createElement("span");
+            binaryDigit.textContent = binaryDigits[Math.floor(Math.random() * binaryDigits.length)];
+            binaryDigit.style.color = getRandomColor();
+            binaryDigit.style.left = `${Math.random() * 100}%`;
+            binaryDigit.style.animationDuration = `${Math.random() * 5 + 2}s`;
+            binaryBackground.appendChild(binaryDigit);
+        }
+    
+        return binaryBackground;
+    }
 
-
+    function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
 
 });
