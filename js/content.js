@@ -44,9 +44,9 @@ const projectsContent = [
         link: "https://github.com/chandant9/idogrocery"
     },
     {
-        title: "Project 2",
-        description: "Description of Project 2.",
-        link: "https://www.example.com/project2"
+        title: "Web Scrapper",
+        description: "This application gathers the list of the urls from each of the urls provided and further parses the html and saves the html in he current folder and the extracted urls to the seperate table. It stores the original urls entered by the user to parse in one table and in the other table it stores the found urls after parsing html. Any duplicate or existing urls will be ignored, only the non duplicate ones will be entered into the table.",
+        link: "https://github.com/chandant9/UrlExtractor"
     },
     // ... other project objects
 ];
