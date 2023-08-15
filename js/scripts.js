@@ -189,23 +189,23 @@ document.addEventListener("DOMContentLoaded", function () {
     
 
     // Listen for scroll events to show the landing section when scrolling up
-    window.addEventListener("scroll", function () {
-        if (window.scrollY === 0) {
-            if (scrolledToHeader) {
-                scrollCount++;
+    // window.addEventListener("scroll", function () {
+    //     if (window.scrollY === 0) {
+    //         if (scrolledToHeader) {
+    //             scrollCount++;
 
-                if (scrollCount >= 2) {
-                    landingSection.classList.remove("hidden");
-                    localStorage.removeItem("landingHidden");
-                    scrolledToHeader = false; // Reset the flag
-                    scrollCount = 0; // Reset the counter
-                    typeHeaderAndParagraphs(); // Retype header and paragraphs
-                }
-            }
-        } else if (!scrolledToHeader) {
-            scrolledToHeader = true;
-        }
-    });
+    //             if (scrollCount >= 2) {
+    //                 landingSection.classList.remove("hidden");
+    //                 localStorage.removeItem("landingHidden");
+    //                 scrolledToHeader = false; // Reset the flag
+    //                 scrollCount = 0; // Reset the counter
+    //                 typeHeaderAndParagraphs(); // Retype header and paragraphs
+    //             }
+    //         }
+    //     } else if (!scrolledToHeader) {
+    //         scrolledToHeader = true;
+    //     }
+    // });
 
     
     function createBalls(numberOfBalls, landingBackground) {
